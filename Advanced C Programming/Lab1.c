@@ -36,7 +36,7 @@ typedef struct
 {
    volatile LED_ROTATE_TYPE  ledRotation;
    volatile LED_PATTERN_TYPE ledPattern;
-   volatile LED_BREATHE_TYPE ledBreath;
+   volatile LED_BREATHE_TYPE ledBreathe;
 }STRUCT_LEDVariables;
 
 STRUCT_LEDVariables STRUCT_allLEDVariables;
@@ -46,7 +46,8 @@ int main ()
 {
     pSTRUCT_LEDVariables->ledRotation.reg = 0xABCDECFF;
 
-    printf ("pSTRUCT_LEDVariables ->ledRotation.reg = %lX \npSTRUCT_LEDVariables->ledRotation.member.u8rotateForwardSpeed = %X \npSTRUCT_LEDVariables->ledRotation.member.u8rotateReverseSpeed = %X \npSTRUCT_LEDVariables->ledRotation.member.u8speedRateChange = %X \npSTRUCT_LEDVariables->ledRotation.member.b1rotateStatusFlags = %x \n\n\n",(pSTRUCT_LEDVariables->ledRotation.reg),(pSTRUCT_LEDVariables->ledRotation.member.u8rotateForwardSpeed),(pSTRUCT_LEDVariables->ledRotation.member.u8rotateReverseSpeed),(pSTRUCT_LEDVariables->ledRotation.member.u8speedRateChange),(pSTRUCT_LEDVariables->ledRotation.member.b1rotateStatusFlags));
+    printf ("pSTRUCT_LEDVariables ->ledRotation.reg = %lX \npSTRUCT_LEDVariables->ledRotation.member.u8rotateForwardSpeed = %X \npSTRUCT_LEDVariables->ledRotation.member.u8rotateReverseSpeed = %X \npSTRUCT_LEDVariables->ledRotation.member.u8speedRateChange = %X \npSTRUCT_LEDVariables->ledRotation.member.b1rotateStatusFlags = %x \n\n\n",(pSTRUCT_LEDVariables->ledRotation.reg),
+    (pSTRUCT_LEDVariables->ledRotation.member.u8rotateForwardSpeed),(pSTRUCT_LEDVariables->ledRotation.member.u8rotateReverseSpeed),(pSTRUCT_LEDVariables->ledRotation.member.u8speedRateChange),(pSTRUCT_LEDVariables->ledRotation.member.b1rotateStatusFlags));
     /*
     pSTRUCT_LEDVariables ->ledRotation.reg = ABCDECFF
     pSTRUCT_LEDVariables->ledRotation.member.u8rotateForwardSpeed = FF 
@@ -56,7 +57,8 @@ int main ()
     */
     pSTRUCT_LEDVariables->ledRotation.member.u8rotateForwardSpeed = 0x11;
 
-    printf ("pSTRUCT_LEDVariables ->ledRotation.reg = %lX \npSTRUCT_LEDVariables->ledRotation.member.u8rotateForwardSpeed = %X \npSTRUCT_LEDVariables->ledRotation.member.u8rotateReverseSpeed = %X \npSTRUCT_LEDVariables->ledRotation.member.u8speedRateChange = %X \npSTRUCT_LEDVariables->ledRotation.member.b1rotateStatusFlags = %x \n\n\n",(pSTRUCT_LEDVariables->ledRotation.reg),(pSTRUCT_LEDVariables->ledRotation.member.u8rotateForwardSpeed),(pSTRUCT_LEDVariables->ledRotation.member.u8rotateReverseSpeed),(pSTRUCT_LEDVariables->ledRotation.member.u8speedRateChange),(pSTRUCT_LEDVariables->ledRotation.member.b1rotateStatusFlags));
+    printf ("pSTRUCT_LEDVariables ->ledRotation.reg = %lX \npSTRUCT_LEDVariables->ledRotation.member.u8rotateForwardSpeed = %X \npSTRUCT_LEDVariables->ledRotation.member.u8rotateReverseSpeed = %X \npSTRUCT_LEDVariables->ledRotation.member.u8speedRateChange = %X \npSTRUCT_LEDVariables->ledRotation.member.b1rotateStatusFlags = %x \n\n\n",(pSTRUCT_LEDVariables->ledRotation.reg),
+    (pSTRUCT_LEDVariables->ledRotation.member.u8rotateForwardSpeed),(pSTRUCT_LEDVariables->ledRotation.member.u8rotateReverseSpeed),(pSTRUCT_LEDVariables->ledRotation.member.u8speedRateChange),(pSTRUCT_LEDVariables->ledRotation.member.b1rotateStatusFlags));
     /*
     pSTRUCT_LEDVariables ->ledRotation.reg = ABCDEC11
     pSTRUCT_LEDVariables->ledRotation.member.u8rotateForwardSpeed = 11 
@@ -154,6 +156,47 @@ int main ()
     pSTRUCT_LEDVariables->ledPattern.member.u8pattern[1] = BB
     pSTRUCT_LEDVariables->ledPattern.member.u8pattern[2] = CC
     pSTRUCT_LEDVariables->ledPattern.member.u8pattern[3] = dd
+    */
+
+    pSTRUCT_LEDVariables->ledBreathe.reg = 0x12345678;
+
+    printf ("pSTRUCT_LEDVariables->ledBreathe.reg = %lX \npSTRUCT_LEDVariables->ledBreathe.member.u8breatheSpeed = %X \npSTRUCT_LEDVariables->ledBreathe.member.u16pwmLightIntensity = %X \npSTRUCT_LEDVariables->ledBreathe.member.b1breatheFlags = %x \n\n\n",(pSTRUCT_LEDVariables->ledBreathe.reg),
+    (pSTRUCT_LEDVariables->ledBreathe.member.u8breatheSpeed),(pSTRUCT_LEDVariables->ledBreathe.member.u16pwmLightIntensity),(pSTRUCT_LEDVariables->ledBreathe.member.b1breatheFlags));  
+    /*
+    pSTRUCT_LEDVariables->ledBreathe.reg = 12345678 
+    pSTRUCT_LEDVariables->ledBreathe.member.u8breatheSpeed = 34
+    pSTRUCT_LEDVariables->ledBreathe.member.u16pwmLightIntensity = 5678
+    pSTRUCT_LEDVariables->ledBreathe.member.b1breatheFlags = 2
+    */  
+    pSTRUCT_LEDVariables->ledBreathe.member.u8breatheSpeed = 0x33;
+
+    printf ("pSTRUCT_LEDVariables->ledBreathe.reg = %lX \npSTRUCT_LEDVariables->ledBreathe.member.u8breatheSpeed = %X \npSTRUCT_LEDVariables->ledBreathe.member.u16pwmLightIntensity = %X \npSTRUCT_LEDVariables->ledBreathe.member.b1breatheFlags = %x \n\n\n",(pSTRUCT_LEDVariables->ledBreathe.reg),
+    (pSTRUCT_LEDVariables->ledBreathe.member.u8breatheSpeed),(pSTRUCT_LEDVariables->ledBreathe.member.u16pwmLightIntensity),(pSTRUCT_LEDVariables->ledBreathe.member.b1breatheFlags)); 
+    /*
+    pSTRUCT_LEDVariables->ledBreathe.reg = 12335678
+    pSTRUCT_LEDVariables->ledBreathe.member.u8breatheSpeed = 33
+    pSTRUCT_LEDVariables->ledBreathe.member.u16pwmLightIntensity = 5678
+    pSTRUCT_LEDVariables->ledBreathe.member.b1breatheFlags = 2  
+    */
+    pSTRUCT_LEDVariables->ledBreathe.member.u16pwmLightIntensity = 0xFEDC;
+
+    printf ("pSTRUCT_LEDVariables->ledBreathe.reg = %lX \npSTRUCT_LEDVariables->ledBreathe.member.u8breatheSpeed = %X \npSTRUCT_LEDVariables->ledBreathe.member.u16pwmLightIntensity = %X \npSTRUCT_LEDVariables->ledBreathe.member.b1breatheFlags = %x \n\n\n",(pSTRUCT_LEDVariables->ledBreathe.reg),
+    (pSTRUCT_LEDVariables->ledBreathe.member.u8breatheSpeed),(pSTRUCT_LEDVariables->ledBreathe.member.u16pwmLightIntensity),(pSTRUCT_LEDVariables->ledBreathe.member.b1breatheFlags)); 
+    /*
+    pSTRUCT_LEDVariables->ledBreathe.reg = 1233FEDC
+    pSTRUCT_LEDVariables->ledBreathe.member.u8breatheSpeed = 33
+    pSTRUCT_LEDVariables->ledBreathe.member.u16pwmLightIntensity = FEDC
+    pSTRUCT_LEDVariables->ledBreathe.member.b1breatheFlags = 2
+    */
+    pSTRUCT_LEDVariables->ledBreathe.member.b1breatheFlags = 0b11;
+
+    printf ("pSTRUCT_LEDVariables->ledBreathe.reg = %lX \npSTRUCT_LEDVariables->ledBreathe.member.u8breatheSpeed = %X \npSTRUCT_LEDVariables->ledBreathe.member.u16pwmLightIntensity = %X \npSTRUCT_LEDVariables->ledBreathe.member.b1breatheFlags = %x \n\n\n",(pSTRUCT_LEDVariables->ledBreathe.reg),
+    (pSTRUCT_LEDVariables->ledBreathe.member.u8breatheSpeed),(pSTRUCT_LEDVariables->ledBreathe.member.u16pwmLightIntensity),(pSTRUCT_LEDVariables->ledBreathe.member.b1breatheFlags)); 
+    /*
+    pSTRUCT_LEDVariables->ledBreathe.reg = 1333FEDC
+    pSTRUCT_LEDVariables->ledBreathe.member.u8breatheSpeed = 33
+    pSTRUCT_LEDVariables->ledBreathe.member.u16pwmLightIntensity = FEDC
+    pSTRUCT_LEDVariables->ledBreathe.member.b1breatheFlags = 3
     */
 
 
