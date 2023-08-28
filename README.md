@@ -3,6 +3,4 @@
 </div>
 
 # Microchip University
-This repository contains my notes, code, and certificates from my courses at Microchip University.<br />
-Here is the link to the courses: https://mu.microchip.com/ 
-
+This repository contains my notes, code, and certificates from my courses at [Microchip University](https://mu.microchip.com/ )
